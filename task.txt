@@ -1,0 +1,26 @@
+Создать иерархию классов животных: 
+animals => {mammals, birds, fish} => {mammals => predators, whales, primates} => {{predators => dog}, {whales => dolphin},
+    {primates => human}}. 
+
+    Определить три метода: move(), say() and eat(). 
+
+    Переопределить эти методы для birds, fish, dog, dolphin и human.
+
+    У этих классов должны быть поля: 
+      age, name, weight, limbAmount (количество конечностей), 
+      статические поля: maxAge, maxWeight,
+      статические методы: is[className] => boolean. 
+
+Создать по 2-а объекта каждого класса
+
+Протестировать эти объекты и их методы: вывести в консоль результаты работы методов, получение свойств.
+
+
+
+
+
+
+
+git remote add origin git@github.com:bws-ksi/classesAnimals.git
+git branch -M main
+git push -u origin main
