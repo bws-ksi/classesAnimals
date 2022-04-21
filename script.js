@@ -5,16 +5,23 @@ class Animals {
     this.weight = weight + ' kg';
     this.limbAmount = limbAmount + ' pieces';
   }
-  move(can){`I can ${this.can}`}
-  say(){}
-  eat(smth){`I love eat ${this.smth}`}
+  move(smth){ console.log( `I can ${smth}`)}
+  say(smth) { console.log( `I can say ${smth}`)}
+  eat(smth) { console.log( `I love eat ${smth}`)}
+
+  static isAnimals(obj) {
+    return obj instanceof this;
+  }
+
+  static maxAge = 110 + ' years';
+  static maxWeight = 15000 + ' kg';
 }
 //=====================================
 class Mammals extends Animals { }
 //=====================================
 class Predators extends Mammals {
   eat(smth) {
-    super.eat(smth);
+    console.log(`I am sometimes can eat ${smth}`);
   };
 }
 
@@ -25,6 +32,7 @@ class Primat extends Mammals { }
 
 const birds = new Animals(3, 'Eagle', 8, 4);
 console.log(birds);
+birds.move('fly');
 
 const fish = new Animals(10, 'Shark', 800, 3);
 console.log(fish);
@@ -32,21 +40,23 @@ console.log(fish);
 
 const dog = new Predators(2, 'Doberman', 25, 4);
 console.log(dog);
-console.log(dog.eat('meal'));
+
 
 const dolphin = new Whales(15, 'Orca', 7000, 3);
 console.log(dolphin);
+dolphin.move('swim');
 
 const human = new Primat (33, 'homoSapiens', 90, 4);
 console.log(human);
+human.say('keep calm and carry on');
+human.eat('meal');
+human.move(' run');
 
 
+console.log(Animals.isAnimals(dog));
 
-
-
-
-
-
+console.log( Animals.maxWeight );
+console.log(Whales.maxAge);
 
 
 
